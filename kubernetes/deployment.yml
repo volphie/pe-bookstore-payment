@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: username/payment:latest
+          image: admin14acr.azurecr.io/pe-bookstore-payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:

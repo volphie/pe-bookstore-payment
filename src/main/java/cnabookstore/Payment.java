@@ -23,9 +23,9 @@ public class Payment {
 
         try {
             // mappings goes here
-            PaymentApplication.applicationContext.getBean(cnabookstore.external.VanCompanyService.class)
+            String result = PaymentApplication.applicationContext.getBean(cnabookstore.external.VanCompanyService.class)
                     .pay(this);
-
+            System.out.println(result);
             this.status = "PAYMENT_COMPLETED";
 
         }

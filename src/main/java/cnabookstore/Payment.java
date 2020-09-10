@@ -20,12 +20,12 @@ public class Payment {
     public void onPrePersist(){
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
+        System.out.println("################################  Payment.onPrePersist");
         try {
             // mappings goes here
             String result = PaymentApplication.applicationContext.getBean(cnabookstore.external.VanCompanyService.class)
                     .pay(this);
-            System.out.println(result);
+            System.out.println("################################3"+result);
             this.status = "PAYMENT_COMPLETED";
 
         }
